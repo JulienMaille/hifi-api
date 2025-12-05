@@ -15,6 +15,7 @@ from fastapi import FastAPI, HTTPException, Query
 from fastapi.responses import FileResponse, HTMLResponse
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import Response
+from fastapi.responses import Response
 
 app = FastAPI(title="HiFi-RestAPI", version="v1.0", description="Tidal Music Proxy")
 app.add_middleware(

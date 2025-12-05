@@ -1,3 +1,4 @@
+
 <div align="center">
 
 <h1 align="center"> HIFI </h1>
@@ -6,14 +7,20 @@
 
 </h4>
  
-<img width="1568" height="860" alt="image" src="https://github.com/user-attachments/assets/5cd7a68c-bb8f-4668-bde6-b03eda4d1c17" />
+<img width="1568" height="860" alt="hifi tidal" src="https://sachinsenal0x64.github.io/picx-images-hosting/hifi.5fkz01pkwn.webp" />
 
  Tidal HiFi Frontend - [BiniTidal](https://music.binimum.org)  Web UI 
+
+
+
+<img width="1568" height="860" alt="hifi tidal" src="https://sachinsenal0x64.github.io/picx-images-hosting/image.3d56fumd2v.webp" />
+
+ Another HiFi Frontend - [Monochrome](https://monochrome.prigoana.com) Web UI 
+
 </div>
 
-
 <div align="center">
-        
+	
 [![License: MIT](https://img.shields.io/badge/License-MIT-orange.svg)](https://opensource.org/licenses/MIT) [![FASTAPI](https://img.shields.io/badge/FastAPI-009688?style=flat&logo=FastAPI&logoColor=white)](https://fastapi.tiangolo.com) [![Python](https://img.shields.io/badge/-Python-FCC624?style=style=flat-square&logo=Python)](https://www.python.org) [![PkgGoDev](https://pkg.go.dev/badge/github.com/rivo/tview)](https://pkg.go.dev/github.com/rivo/tview)
 
 
@@ -37,8 +44,6 @@
 
 > I'm currently paying for a Tidal HiFi Plus subscription.
 
-> We Dont have any GUI Application for android / ios / windows / mac / linux  contributors are welcome.
-
 > You can access our rest api for free if you want to self-host then need tidal subscription.
 
 > TUI is plug & play also you can add your own tidal account but by default it has our API so you can listen tidal music for free.
@@ -48,8 +53,6 @@
 > [MQA-CHECKER](https://github.com/purpl3F0x/MQA_identifier)
 
 > Low (96 kbps) - 3 MB | Low (320 kbps) - 8 MB | High (FLAC, 16-bit, 44.1 kHz) - 30 MB | Max (MQA) - 26 MB | Max (MQA) - 26  | Max (HiRes FLAC, up to 24-bit, 192 kHz) - 30 MB to 140 MB
-
-> Currently We don't have any GUI Application for android / ios / windows / mac / linux  contributors are welcome.
 
  
 <br>
@@ -73,28 +76,20 @@ I love cli tools as well as music, so why not to have a tidal music client for t
  
 # 🚀 Features
 
-- 🍟 TIDAL PREMIUM (HIFI-PLUS) YOU CAN LISTEN FOR FREE USING OUR  [API](https://tidal.401658.xyz) & TUI PLAYER
+- 🍟 TIDAL PREMIUM (HIFI-PLUS) YOU CAN LISTEN FOR FREE USING OUR  [API](https://tidal.401658.xyz) & WEB PLAYER
   
 - 📀 AUDIO QUALITY / CODEC  : SONY_360RA | DOLBY ATMOS | MQA 96K  | HI RES FLAC | HI RES LOSSLESS | FLAC LOSSLESS | HIGH | LOW | Up to 24-bit, 192 kHz
 
 - ⌨ VIM LIKE KEY BINDINGS
 
-- 🎧 PLAYER: TIDAL-HIFI | PODCAST TUI  (⭕ in progress)
-  
-- 👤 TIDAL ACCOUNTS MANAGEMENT 
+- 🎧 PLAYER: TIDAL-HIFI Web / TUI
 
-- 📚 PLAYLISTS | RECENT PLAYBACK | LIBARAY MANAGEMENT | LYRICS & COVER ART (⭕ in progress)
-
-- 📡 BEAUTIFUL REST API (ACT AS REVERSE PROXY INSTANCE)
+- 📡 REST API
   
 - ⛓️‍💥 BYPASS GEO RESTRICTED CONTENT
   
-- ⚖️ LAYER 7 LOAD BALANCER (ACT AS API GATEWAY | Purely Python & GO Implementations)
+- ⚖️ LAYER 7 LOAD BALANCER (ACT AS API GATEWAY)
 
-- ⚡️ POWERFUL ASYNC | CONCURRENCY SUPPORT
-
-- 📑 DOCS SUPPORT ( SWAGGER UI ) | API PLAYGROUND (/tdoc and /pdoc)
- 
 - 🕹️ REMOTE (Highly Controllable Remotely Over the Network + Independently, Such an as Play | Pause | Seek | Volume | Next | Previous | Loops (Repeat | Infinity))
   
 </table>
@@ -131,24 +126,23 @@ I love cli tools as well as music, so why not to have a tidal music client for t
 
 - [tidal-dl](https://github.com/Nem-git/tidal) Download music from Tidal, no account required.
 - [tidler](https://git.medvidek77.tech/Medvidek77/tidler) Tidal music downloader based on the hifi-tui API
-- [BiniTidal-Web](https://music.binimum.org) | [BiniTidal](https://github.com/uimaxbai/tidal-ui) Hifi Frontend
+- [BiniTidal (Web)](https://music.binimum.org) | [SquidWtf (Web)](https://tidal.squid.wtf) | [BiniTidal (Source code)](https://github.com/uimaxbai/tidal-ui) Hifi Frontend
+- [Monochrome (Web)](https://monochrome.prigoana.com) | [Monochrome (Source code)](https://github.com/eduardprigoana/monochrome)  Hifi Frontend
 
 <br>
 
 
 # 💨 Quick Start
 
-<br>
-
 ## Web UI
 
-- [BiniTidal-Web](https://music.binimum.org) | [BiniTidal](https://github.com/uimaxbai/tidal-ui) Hifi Frontend
-
+- [BiniTidal (Web)](https://music.binimum.org) | [SquidWtf (Web)](https://tidal.squid.wtf) Hifi Frontend
+- [Monochrome (Web)](https://monochrome.prigoana.com)  Another Hifi Frontend
 
 <br>
 
 > [!NOTE]
-> Tui player based on [api](https://github.com/sachinsenal0x64/Hifi-Tui?tab=readme-ov-file#-tidal-reverse-api--status) so its totally free (you can listen without any premium subscription) and easy to install via package manager 
+> Tui player based on [hifi-api](https://github.com/sachinsenal0x64/Hifi-Tui?tab=readme-ov-file#-tidal-reverse-api--status) so its totally free (you can listen without any premium subscription) and easy to install via package manager 
 
 ## TUI
 
@@ -362,6 +356,15 @@ XML-encoded MPEG-DASH manifest. Play on VLC/FFMpeg/Google Shaka Player (see note
 	</Period>
 </MPD>
 ```
+#### MPV Player
+
+```sh
+ mpv https://tidal.401658.xyz/dash/?id=286266926&quality=HI_RES_LOSSLESS
+
+```
+
+<img width="913" height="218" alt="image" src="https://github.com/user-attachments/assets/c6d0cad4-fc44-412b-8f0e-0ad870cc3ae2" />
+
 
 #### Google Shaka Player
 
@@ -691,7 +694,7 @@ HIFI returns the following status codes in its API:
 
 > | Parameter  |   Type    | Description |
 > |------------|-----------|-------------|
-> | `id`       |  integer  | Album Id = `157117504` |
+> | `id`       |  integer  | Album Id = `286266925` |
 
 
 <br>
@@ -700,7 +703,7 @@ HIFI returns the following status codes in its API:
 
 >HTTPie
 
-    https GET "https://tidal.401658.xyz/album/?id=157117504"
+    https GET "https://tidal.401658.xyz/album/?id=286266925"
     
 
 ![image](https://github.com/sachinsenal0x64/picx-images-hosting/raw/master/2024-02-20-19:33:52-screenshot.99t2w3gelf.webp)
