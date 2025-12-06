@@ -9,8 +9,11 @@ from typing import Dict, List, Optional, Union
 
 import httpx
 import uvicorn
-from fastapi import FastAPI, HTTPException, Query
+from dotenv import load_dotenv
+from fastapi import FastAPI, HTTPException, Query, Request
 from fastapi.middleware.cors import CORSMiddleware
+
+load_dotenv()
 
 # Shared HTTP client is created in app lifespan for connection reuse
 _http_client: Optional[httpx.AsyncClient] = None
@@ -59,9 +62,10 @@ app.add_middleware(
 API_VERSION = "2.0"
 
 # Config (defaults act as fallback if token file missing)
-CLIENT_ID = "zU4XHVVkc2tDPo4t"
-CLIENT_SECRET = "VJKhDFqJPqvsPVNBV6ukXTJmwlvbttP7wlMlrc72se4="
-REFRESH_TOKEN: Optional[str] = None
+CLIENT_ID = os.getenv("CLIENT_ID", "zU4XHVVkc2tDPo4t")
+CLIENT_SECRET = os.getenv("CLIENT_SECRET", "VJKhDFqJPqvsPVNBV6ukXTJmwlvbttP7wlMlrc72se4=")
+REFRESH_TOKEN: Optional[str] = os.getenv("REFRESH_TOKEN")
+USER_ID = os.getenv("USER_ID")
 TOKEN_FILE = os.getenv("TOKEN_FILE", "token.json")
 
 if os.path.exists(TOKEN_FILE):
@@ -75,6 +79,7 @@ if os.path.exists(TOKEN_FILE):
                 "client_id": entry.get("client_ID") or CLIENT_ID,
                 "client_secret": entry.get("client_secret") or CLIENT_SECRET,
                 "refresh_token": entry.get("refresh_token") or REFRESH_TOKEN,
+                "user_id": entry.get("userID") or USER_ID,
                 # Access tokens in file have unknown expiry; force refresh on first use
                 "access_token": None,
                 "expires_at": 0,
@@ -82,10 +87,24 @@ if os.path.exists(TOKEN_FILE):
             if cred["refresh_token"]:
                 _creds.append(cred)
 
-    if _creds:
-        CLIENT_ID = _creds[0]["client_id"]
-        CLIENT_SECRET = _creds[0]["client_secret"]
-        REFRESH_TOKEN = _creds[0]["refresh_token"]
+# Add env var credential if available and unique (simple check)
+if REFRESH_TOKEN:
+    env_cred = {
+        "client_id": CLIENT_ID,
+        "client_secret": CLIENT_SECRET,
+        "refresh_token": REFRESH_TOKEN,
+        "user_id": USER_ID,
+        "access_token": None,
+        "expires_at": 0,
+    }
+    # Avoid adding duplicate if it was already loaded from file with same refresh token
+    if not any(c["refresh_token"] == REFRESH_TOKEN for c in _creds):
+        _creds.append(env_cred)
+
+if _creds:
+    CLIENT_ID = _creds[0]["client_id"]
+    CLIENT_SECRET = _creds[0]["client_secret"]
+    REFRESH_TOKEN = _creds[0]["refresh_token"]
 
 
 def _pick_credential() -> dict:
