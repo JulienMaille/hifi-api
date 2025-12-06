@@ -292,7 +292,7 @@ async def search(
 
     raise HTTPException(status_code=400, detail="Provide one of s, a, al, v, or p")
 
-@app.get("/album/{id}")
+@app.get("/album/")
 async def get_album(id: int):
     url = f"https://api.tidal.com/v1/albums/{id}/items"
     return await make_request(url, params={"limit": 100, "countryCode": "US"})
