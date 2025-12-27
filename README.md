@@ -12,7 +12,7 @@
 
 ## Setup
 
-Run `tidal_auth/tidal_auth.py` and follow the instructions to authenticate. The script saves its output in a file `token.json`. Keep it safe.
+Run `pip install -r requirements.txt` in `tidal_auth/`. Then run `tidal_auth/tidal_auth.py` and follow the instructions to authenticate. The script saves its output in a file `token.json`. Keep it safe.
 
 > [!NOTE]
 > 
@@ -25,6 +25,10 @@ Run `tidal_auth/tidal_auth.py` and follow the instructions to authenticate. The 
 > When running `tidal_auth.py` with an existing `token.json` file, the new token is **appended** to the original `token.json`. The API randomly selects one of the tokens from the list to be used - this is intended behaviour.
 >
 > However, this also means that **expired tokens will not be overwritten by re-running the `tidal_auth.py` script**. If in doubt, just delete `token.json` and re-run the script.
+
+Install dependencies for the main API with `pip install -r requirements.txt` in the main project folder.
+
+Run the project with `python3 main.py`. It opens a web server on `0.0.0.0:8000` by default. (caution!)
 
 > [!NOTE]
 >
