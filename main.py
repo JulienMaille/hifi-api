@@ -43,10 +43,11 @@ async def lifespan(app: FastAPI):
         if _http_client:
             await _http_client.aclose()
 
+API_VERSION = "2.2"
 
 app = FastAPI(
     title="HiFi-RestAPI",
-    version="2.0",
+    version=API_VERSION,
     description="Tidal Music Proxy",
     lifespan=lifespan,
 )
@@ -59,7 +60,6 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-API_VERSION = "2.1"
 
 # Config (defaults act as fallback if token file missing)
 CLIENT_ID = os.getenv("CLIENT_ID", "zU4XHVVkc2tDPo4t")
